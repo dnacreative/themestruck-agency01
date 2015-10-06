@@ -1,17 +1,5 @@
  $('document').ready(function () {
-     
-     // initialize skrollr if the window width is large enough
-      if ($(window).width() > 767) {
-        skrollr.init();
-      }
 
-      // disable skrollr if the window is resized below 768px wide
-      $(window).on('resize', function () {
-        if ($(window).width() <= 767) {
-          skrollr.init().destroy(); // skrollr.init() returns the singleton created above
-        }
-      });
-          
      $('.filter').on('click', function (e) {
          e.preventDefault();
      });
@@ -35,7 +23,7 @@
      var stickyNavTop = $('nav.main-menu').offset().top;
      var stickyNav = function () {
          var scrollTop = $(window).scrollTop();
-         console.log(scrollTop);
+
          if (scrollTop - 100 > stickyNavTop) {
              $('nav.main-menu').addClass('sticky');
          } else {
